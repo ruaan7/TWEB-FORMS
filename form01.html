@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Inscrição nos jogos escolares</title>
+</head>
+<body>
+    <header>
+        <h1>Inscrição nos jogos escolares</h1>
+        Preencha os campos abaixo com suas informações.
+    </header>
+    <main>
+        <form id="inscricao-jogos" action="/incricoes-jogos" method="post" enctype="multipart/form-data">
+            <fieldset>
+            <legend>Identificação do atleta</legend>
+
+            <label for="nome-atleta">Nome completo do atleta (obrigatório)</label>
+            <input type="text" id="nome-atleta" name="nome_atleta" required><br>
+
+            <label for="nome-social">Nome social</label>
+            <input type="text" id="nome-social" name="nome_social" required><br>
+            
+            <label for="matricula-atleta">Matrícula (obrigatória)</label>
+            <input type="text" id="matricula-atleta" name="matricula_atleta" required><br>
+
+            <label for="nascimento-atleta">Data de nascimento</label>
+            <input type="date" id="nascimento-atleta" name="nascimento_atleta" required><br>
+
+            <label for="email-atleta">E-mail de contato (obrigatório)</label>
+            <input type="email" id="email-atleta" name="email_atleta" required><br>
+
+            <label for="telefone-atleta">Telefone de contato</label>
+            <input type="tel" id="telefone-atleta" name="telefone_atleta" required><br>
+
+            <label for="site-escola">Site da escola</label>
+            <input type="url" id="site-escola" name="site_escola" required placeholder="https://escola.example">
+            </fieldset>
+
+            <fieldset>
+            <legend>Escola e delegação</legend>
+
+            <label for="escola">Escola de origem (com sugestôes)</label>
+            <input type="search" id="escola" name="escola" list="escolas">
+            <datalist id="escolas">
+                <option value="Escola Horizonte"></option>
+                <option value="Escola Aurora"></option>
+                <option value="Escola Caminhos"></option>
+            </datalist><br>
+
+            <label for="turma">Turma</label>
+            <select id="turma" name="turma" required>    
+                <optgroup label="Ensino Fundamental">
+                <option value="8-ano">8° ano</option>
+                <option value="9-ano">9° ano</option>
+                </optgroup>
+
+                <optgroup label="Ensino Medio">
+                <option value="1-ano">1° ano</option>
+                <option value="2-ano">2° ano</option>
+                <option value="3-ano">3° ano</option>
+                </optgroup>
+            </select><br>
+
+                <label for="equipe">Equipe</label>
+                <input type="text" id="equipe" name="Equipe" required><br>
+
+                <label for="professor-responsavel">Professor Responsável</label>
+                <input type="text" id="professor-responsavel" name="professor_responsavel" required><br>
+
+                <label for="telefone-professor">Telefone do Professor</label>
+                <input type="tel" id="telefone-professor" name="telefone_professor" required><br>
+            </fieldset>
+
+            <fieldset>
+            <legend>Participação nos jogos</legend>
+                <label for="modalidade">Modalidade principal(obrigatória)</label>
+                <select name="modalidades" id="modalidade" required>
+                    <optgroup label="Coletivas">
+                    <option value="" hidden>Selecione uma modalidade</option>
+                    <option value="futsal">Futsal</option>
+                    <option value="voleibol">Voleibol</option>
+                    <option value="basquetebol">Basquetebol</option>
+                    <option value="handebol">Handebol</option>
+                    </optgroup>
+
+                    <optgroup label="Individuais">
+                    <option value="atletismo">Atletismo</option>
+                    <option value="natacao">Natação</option>
+                    <option value="xadrez">Xadrez</option>
+                    <option value="tenis-mesa">Tênis de mesa</option>
+                    </optgroup>
+                <select><br>
+
+                <fieldset>
+                <legend>Turno de preferência</legend>
+                    <label for="manha">Manhâ</label>
+                    <input type="radio" value="Manha" id="manha" name="turno" required>
+
+                    <label for="tarde">Tarde</label>
+                    <input type="radio" value="Tarde" id="tarde" name="turno" required>
+
+                    <label for="noite">Noite</label>
+                    <input type="radio" value="Noite" id="noite" name="turno" required>
+                </fieldset><br>
+
+                <fieldset>
+                <legend>Modalidades de interesse(permite várias escolhas)</legend>
+
+                <label for="futsal">Futsal</label>
+                <input type="checkbox" value="Futsal" id="futsal" name="interesse" required>
+
+                <label for="voleibol">Voleibol</label>
+                <input type="checkbox" value="Voleibol" id="voleibol" name="interesse" required>
+
+                <label for="basquetebol">Basquetebol</label>
+                <input type="checkbox" value="Basquetebol" id="basquetebol" name="interesse" required>
+
+                <label for="handebol">Handebol</label>
+                <input type="checkbox" value="Handebol" id="handebol" name="interesse" required>
+
+                <label for="atletismo">Atletismo</label>
+                <input type="checkbox" value="Atletismo" id="atletismo" name="interesse" required>
+
+                <label for="natacao">Natação</label>
+                <input type="checkbox" value="Natacao" id="natacao" name="interesse" required>
+                
+                <label for="xadrez">Xadrez</label>
+                <input type="checkbox" value="Xadrez" id="xadrez" name="interesse" required>
+
+                <label for="tenis-mesa">Tênis de mesa</label>
+                <input type="checkbox" value="Tenis-mesa" id="tenis-mesa" name="interesse" required>
+                </fieldset><br>
+
+                <label for="tamanho-camiseta">Tamanho da camiseta</label>
+                <select name="camiseta" id="camiseta" required>
+                    <option value="" hidden>Selecione um tamanho</option>
+                    <option value="pp">PP</option>
+                    <option value="p">P</option>
+                    <option value="m">M</option>
+                    <option value="g">G</option>
+                    <option value="gg">GG</option><br>
+                    
+                    <h1>Participação em atividadades complementares</h1>
+                        <label for="cerimonia-abertura">Cerimônia de abertura</label>
+                        <input type="checkbox" value="Cerimonia-abertura" id="cerimonia-abertura" name="atividades-complementares" required>
+                
+                        <label for="oficina-arbitragem">Oficina de arbitragem</label>
+                        <input type="checkbox" value="Oficina-arbitragem" id="oficina-arbitragem" name="atividades-complementares" required>
+
+                        <label for="organização-equipes">Organização das equipes</label>
+                        <input type="checkbox" value="Organização-equipes" id="organização-equipes" name="atividades-complementares" required>
+            </fieldset>
+        </form>
+    </main>
+</body>
+</html>
